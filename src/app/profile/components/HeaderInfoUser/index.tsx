@@ -1,3 +1,4 @@
+import { IUser } from "@/interface/user";
 import * as S from "./styles";
 
 interface IHeaderInfoUser {

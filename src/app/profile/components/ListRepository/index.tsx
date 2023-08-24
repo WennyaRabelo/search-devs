@@ -1,3 +1,4 @@
+import { formatDate } from "@/utils/formatDate"
 import * as S from "./styles"
 import { IRepository } from "@/interface/repository"
 
@@ -24,7 +25,7 @@ export function ListRepository({ repositories }: IListRepository) {
     <S.Container>
       {orderByStar(repositories).map((repository) => {
         return (
-          <S.ItemRepository>
+          <S.ItemRepository key={repository.name}>
             <a
               className="nameRepository"
               target="_blank"
@@ -37,7 +38,7 @@ export function ListRepository({ repositories }: IListRepository) {
               <img src="/icons/star.svg" className="iconStar" />
               <span>{repository.stargazers_count}</span>
               <img src="/icons/point.svg" className="iconPoint" />
-              <span>{repository.updated_at}</span>
+              <span>Última atualização: {formatDate(new Date(repository.updated_at))}</span>
             </S.InfoRepository>
 
             <S.Divider />
