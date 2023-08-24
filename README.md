@@ -15,7 +15,7 @@ npm install -g yarn
 1. Clone este repositório em sua máquina local:
 
 ```bash
-git clone https://github.com/seu-usuario/seu-projeto.git
+git clone https://github.com/WennyaRabelo/search-devs.git
 ```
 
 2. Navegue até o diretório raiz do projeto:
