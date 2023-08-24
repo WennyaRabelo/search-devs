@@ -52,7 +52,7 @@ E para executar a aplicação em modo de produção após a construção, execut
 yarn start
 ```
 
-Agora a aplicação estará acessível em `http://localhost:3000`.
+Agora a aplicação estará acessível em `http://localhost:3000`, e também estará acessível em `https://search-devs-nu.vercel.app/`
 
 ## Bibliotecas Utilizadas
 
