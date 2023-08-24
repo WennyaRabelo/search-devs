@@ -11,12 +11,13 @@ export const ItemRepository = styled.div`
     font-weight: 600;
     font-size: 20px;
     text-decoration: none;
-    color: #000;
+    color: #171923;
   }
 
   .description {
     margin-top: 20px;
     color: #4A5568;
+    font-size: 16px;
   }
 `;
 
@@ -25,6 +26,7 @@ export const InfoRepository = styled.div`
   align-items: center;
   margin-top: 17px;
   color: #4A5568;
+  
 
   .iconStar {
     margin-right: 8px;
@@ -32,6 +34,10 @@ export const InfoRepository = styled.div`
 
   .iconPoint {
     margin: 0 8px;
+  }
+
+  span {
+    font-size: 14px;
   }
 `;
 

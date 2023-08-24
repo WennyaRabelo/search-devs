@@ -16,6 +16,16 @@ export const Container = styled.div`
     img {
       margin-right: 8px;
     }
+
+    span {
+      color: #4A5568;
+      font-size: 14px;
+    }
+
+    a {
+      text-decoration: none;
+      color: #4A5568;
+    }
   }
 
   .mb-24 {

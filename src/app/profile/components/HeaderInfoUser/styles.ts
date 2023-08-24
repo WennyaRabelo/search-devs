@@ -27,4 +27,6 @@ export const BoxRightInfoUser = styled.div`
 
 export const HeaderDescription = styled.p`
   margin-top: 16px;
+  color: #4A5568;
+  font-size: 16px;
 `;
