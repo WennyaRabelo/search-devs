@@ -1,8 +1,25 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+interface IContainer {
+  borderColor?: string
+  borderWidth?: number
+}
 
-  border: 1px solid #E2E8F0;;
+export const Container = styled.div<IContainer>`
+
+  ${(props) =>
+    props.borderColor
+      ? css` border: 1px solid ${props.borderColor};`
+      : css` border: 1px solid #E2E8F0;`
+  }
+
+${(props) =>
+    props.borderWidth
+      ? css` border-width: ${props.borderWidth}px;`
+      : css` border-width:1px;`
+  }
+
+ 
   border-radius: 6px;
   display: flex;
   align-items: center;

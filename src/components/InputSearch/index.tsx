@@ -3,10 +3,16 @@ import * as S from "./styles"
 import { ChangeEvent, useEffect, useState } from "react"
 
 interface IInputSearch {
-  onChange(value: string): void
+  onChange(value: string): void;
+  borderColor?: string;
+  borderWidth?: number;
 }
 
-export function InputSearch({ onChange }: IInputSearch) {
+export function InputSearch({
+  onChange,
+  borderColor,
+  borderWidth
+}: IInputSearch) {
 
   const [value, setValue] = useState<string>("");
 
@@ -20,7 +26,9 @@ export function InputSearch({ onChange }: IInputSearch) {
   }, [value])
 
   return (
-    <S.Container>
+    <S.Container
+      borderColor={borderColor}
+      borderWidth={borderWidth}>
       <Search
         className="iconSearch"
       />
