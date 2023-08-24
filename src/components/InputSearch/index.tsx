@@ -4,14 +4,14 @@ import { ChangeEvent, useEffect, useState } from "react"
 
 interface IInputSearch {
   onChange(value: string): void;
-  borderColor?: string;
-  borderWidth?: number;
+  bordercolor?: string;
+  borderwidth?: number;
 }
 
 export function InputSearch({
   onChange,
-  borderColor,
-  borderWidth
+  bordercolor,
+  borderwidth
 }: IInputSearch) {
 
   const [value, setValue] = useState<string>("");
@@ -27,8 +27,8 @@ export function InputSearch({
 
   return (
     <S.Container
-      borderColor={borderColor}
-      borderWidth={borderWidth}>
+      bordercolor={bordercolor}
+      borderwidth={borderwidth}>
       <Search
         className="iconSearch"
       />

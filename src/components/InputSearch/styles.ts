@@ -1,21 +1,21 @@
 import styled, { css } from "styled-components";
 
 interface IContainer {
-  borderColor?: string
-  borderWidth?: number
+  bordercolor?: string
+  borderwidth?: number
 }
 
 export const Container = styled.div<IContainer>`
 
-  ${(props) =>
-    props.borderColor
-      ? css` border: 1px solid ${props.borderColor};`
+  ${({ bordercolor }) =>
+    bordercolor
+      ? css` border: 1px solid ${bordercolor};`
       : css` border: 1px solid #E2E8F0;`
   }
 
-${(props) =>
-    props.borderWidth
-      ? css` border-width: ${props.borderWidth}px;`
+${({borderwidth}) =>
+    borderwidth
+      ? css` border-width: ${borderwidth}px;`
       : css` border-width:1px;`
   }
 

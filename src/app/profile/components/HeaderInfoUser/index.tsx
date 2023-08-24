@@ -1,23 +1,26 @@
 import * as S from "./styles";
 
-export function HeaderInfoUser() {
+interface IHeaderInfoUser {
+  user?: IUser
+}
+
+export function HeaderInfoUser({ user }: IHeaderInfoUser) {
   return (
     <S.ContainerInfoUser>
 
       <S.HeaderInfoUser>
         <img
-          src="https://avatars.githubusercontent.com/u/54084350?v=4"
+          src={user?.avatar_url ?? ""}
           className="avatarUser" />
         <S.BoxRightInfoUser>
-          <strong>Wennya Rabelo</strong>
-          <span className="username">@wennyarabelo</span>
+          <strong>{user?.name ?? "---"}</strong>
+          <span className="username">@{user?.login ?? "---"}</span>
         </S.BoxRightInfoUser>
 
       </S.HeaderInfoUser>
 
       <S.HeaderDescription>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Nunc vulputate libero et velit interdum, ac aliquet odio mattis.
+        {user?.bio ?? ""}
       </S.HeaderDescription>
 
 

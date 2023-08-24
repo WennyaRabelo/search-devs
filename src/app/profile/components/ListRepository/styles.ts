@@ -1,6 +1,9 @@
 import styled from "styled-components"
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  overflow-y: auto;
+  max-height: 600px;
+`;
 
 export const ItemRepository = styled.div`
 

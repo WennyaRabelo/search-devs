@@ -2,7 +2,7 @@
 import Image from "next/image"
 import * as S from "./page.styles"
 import { InputSearch } from "@/components/InputSearch"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -11,8 +11,12 @@ export default function Home() {
 
   const [value, setValue] = useState<string>("");
 
+  const [loading, setLoading] = useState<boolean>(false);
+
+
   const onClickSearch = () => {
     if (value) {
+      setLoading(true)
       router.push(`/profile/${value}`)
     }
   }
@@ -34,8 +38,9 @@ export default function Home() {
 
         <button
           className="btn-search"
-          onClick={() => onClickSearch()}
-        >Search</button>
+          onClick={() => onClickSearch()}>
+            {loading ? 'Carregando...' : 'Search'}
+            </button>
       </S.ContainerSearch>
     </S.Container>
   )

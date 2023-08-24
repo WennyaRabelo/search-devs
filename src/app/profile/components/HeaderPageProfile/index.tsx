@@ -19,8 +19,8 @@ export function HeaderPageProfile() {
       <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
         <InputSearch
           onChange={() => { }}
-          borderColor="#8C19D2"
-          borderWidth={2} />
+          bordercolor="#8C19D2"
+          borderwidth={2} />
       </Grid>
     </Grid>
   )
