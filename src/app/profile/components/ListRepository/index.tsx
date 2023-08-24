@@ -6,12 +6,31 @@ interface IListRepository {
 }
 
 export function ListRepository({ repositories }: IListRepository) {
+
+  const orderByStar = (repositories: IRepository[]) => {
+    return repositories.sort((current, next) => {
+      if (current.stargazers_count < next.stargazers_count) {
+        return 1
+      } else if (current.stargazers_count > next.stargazers_count) {
+        return -1
+      } else {
+        return 0
+      }
+
+    })
+  }
+
   return (
     <S.Container>
-      {repositories.map((repository) => {
+      {orderByStar(repositories).map((repository) => {
         return (
           <S.ItemRepository>
-            <span className="nameRepository">{repository.name}</span>
+            <a
+              className="nameRepository"
+              target="_blank"
+              href={repository.html_url}>
+              {repository.name}
+            </a>
             <p className="description">{repository.description}</p>
 
             <S.InfoRepository>

@@ -21,6 +21,7 @@ export default function Profile({ params }: IProfile) {
 
   const router = useRouter();
 
+  const [search, setSearch] = useState<string>('')
   const [user, setUser] = useState<IUser>()
   const [repositories, setRepositories] = useState<IRepository[]>([])
   const [loading, setLoading] = useState<boolean>(false)
@@ -35,9 +36,9 @@ export default function Profile({ params }: IProfile) {
       setRepositories(repositories)
     } catch (error: any) {
       const statusError = error?.response?.status
-      if(statusError === 404) {
+      if (statusError === 404) {
         alert("Usuário não encontrado")
-      }    
+      }
       router.push("/")
     }
 
@@ -47,11 +48,19 @@ export default function Profile({ params }: IProfile) {
     getUserRepos(params.username)
   }, [params])
 
+  useEffect(() => {
+    if (!!search) {
+      getUserRepos(search)
+    }
+  }, [search])
+
 
   return (
     <S.Container>
       <S.SubContainer>
-        <HeaderPageProfile />
+        <HeaderPageProfile
+          loading={loading}
+          onChange={value => setSearch(value)} />
         <Grid container className="gridContent">
           <Grid item xl={4} lg={4} md={4} sm={4} xs={4}>
             {loading

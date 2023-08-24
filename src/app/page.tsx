@@ -4,22 +4,19 @@ import * as S from "./page.styles"
 import { InputSearch } from "@/components/InputSearch"
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import { FormSearch } from "@/components/FormSearch";
 
 export default function Home() {
 
   const router = useRouter();
-
-  const [value, setValue] = useState<string>("");
-
   const [loading, setLoading] = useState<boolean>(false);
 
 
-  const onClickSearch = () => {
-    if (value) {
-      setLoading(true)
-      router.push(`/profile/${value}`)
-    }
+  const onClickSearch = (value: string) => {
+    setLoading(true)
+    router.push(`/profile/${value}`)
   }
+
 
   return (
     <S.Container>
@@ -31,17 +28,11 @@ export default function Home() {
         className="logo"
       />
 
-      <S.ContainerSearch>
-        <InputSearch
-          onChange={(value) => { setValue(value) }}
-        />
-
-        <button
-          className="btn-search"
-          onClick={() => onClickSearch()}>
-            {loading ? 'Carregando...' : 'Search'}
-            </button>
-      </S.ContainerSearch>
+      <FormSearch
+        bordercolor="#E2E8F0"
+        borderwidth={1}
+        loading={loading}
+        onChange={value => onClickSearch(value)} />
     </S.Container>
   )
 }

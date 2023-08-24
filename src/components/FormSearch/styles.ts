@@ -1,13 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerImage = styled.div`
-  height: 100%;
-  display: flex;
-  align-items: center;
-`;
-
 export const ContainerSearch = styled.div`
-
   display: flex;
   width: 100%;
   max-width: 800px;

@@ -10,6 +10,8 @@ export const ItemRepository = styled.div`
   .nameRepository {
     font-weight: 600;
     font-size: 20px;
+    text-decoration: none;
+    color: #000;
   }
 
   .description {

@@ -1,3 +1,4 @@
+import { IUser } from "@/interface/user";
 import * as S from "./styles";
 
 interface IInfoSocialMediaUser {
@@ -5,6 +6,7 @@ interface IInfoSocialMediaUser {
 }
 
 export function InfoSocialMediaUser({ user }: IInfoSocialMediaUser) {
+
   return (
     <S.Container>
       <ul className="listSocialMedia">
@@ -35,12 +37,26 @@ export function InfoSocialMediaUser({ user }: IInfoSocialMediaUser) {
 
         <li className="listSocialMediaItem">
           <img src="/icons/link.svg" />
-          <span>{!!user?.blog ? user?.blog :  "---"}</span>
+          {!!user?.blog
+            ? <a
+              className="listSocialMediaItemLink"
+              target="_blank"
+              href={user.blog}
+            >{user.blog}</a>
+            : <span>---</span>
+          }
         </li>
 
         <li className="listSocialMediaItem">
           <img src="/icons/twitter.svg" />
-          <span>{user?.twitter_username ? `@${user?.twitter_username}` : "---"}</span>
+          {!!user?.blog
+            ? <a
+              className="listSocialMediaItemLink"
+              target="_blank"
+              href={`https://twitter.com/${user.twitter_username}`}>
+              @{user.twitter_username}</a>
+            : <span>---</span>
+          }
         </li>
       </ul>
 
