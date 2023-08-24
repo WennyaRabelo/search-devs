@@ -16,7 +16,7 @@ export function HeaderPageProfile() {
           />
         </S.ContainerImage>
       </Grid>
-      <Grid item xl={8} lg={8} md={8} sm={8} xs={8}>
+      <Grid item xl={6} lg={6} md={6} sm={6} xs={6}>
         <InputSearch
           onChange={() => { }}
           borderColor="#8C19D2"
